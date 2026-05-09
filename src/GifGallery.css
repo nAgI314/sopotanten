@@ -1,0 +1,95 @@
+.gif-gallery {
+  width: 100%;
+}
+
+/* Desktop: 2x2 grid filling viewport height (each cell centers its content) */
+@media (min-width: 768px) {
+  .gif-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vh 50vh;
+    gap: 0;
+  }
+
+  .gif-gallery .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gif-gallery .media-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .gif-gallery .gif {
+    max-width: 98%;
+    max-height: 98%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* summary download button (non-fixed) */
+  .summary-download {
+    display: flex;
+    justify-content: center;
+    padding: 18px 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .summary-download.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* hide per-gif mobile buttons on desktop */
+  .mobile-action { display: none; }
+}
+
+/* Mobile: vertical stacked list */
+@media (max-width: 767px) {
+  .gif-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .gif-gallery .cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+  }
+
+  .gif-gallery .gif {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+  }
+
+  /* show per-gif buttons on mobile */
+  .mobile-action { display: block; }
+
+  .download-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--accent, #0b74ff);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* hide summary button on mobile */
+  .summary-download { display: none; }
+}
