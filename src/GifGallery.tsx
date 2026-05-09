@@ -1,28 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
 import { gifs } from './gif-list'
 import './GifGallery.css'
 
 export default function GifGallery() {
-  const galleryRef = useRef<HTMLDivElement | null>(null)
-  const [showFloating, setShowFloating] = useState(false)
-
-  useEffect(() => {
-    function onScroll() {
-      // Show floating download button on desktop when user scrolls down a bit
-      const isDesktop = window.matchMedia('(min-width: 768px)').matches
-      const scrolled = window.scrollY > 30
-      setShowFloating(isDesktop && scrolled)
-    }
-
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-    }
-  }, [])
-
   function downloadFile(src: string) {
     const a = document.createElement('a')
     a.href = src
@@ -42,7 +21,7 @@ export default function GifGallery() {
   }
 
   return (
-    <div className="gif-gallery" ref={galleryRef}>
+    <div className="gif-gallery">
       {gifs.map((name, idx) => (
         <div key={name} className="cell" data-index={idx}>
           <div className="media-wrap">
@@ -59,8 +38,7 @@ export default function GifGallery() {
         </div>
       ))}
 
-      {/* Desktop: non-fixed summary download button shown after slight scroll */}
-      <div className={`summary-download ${showFloating ? 'visible' : ''}`}>
+      <div className="summary-download">
         <button onClick={downloadAll} className="download-btn">
           まとめてダウンロード
         </button>
