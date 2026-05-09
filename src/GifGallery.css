@@ -2,24 +2,46 @@
   width: 100%;
 }
 
-/* Desktop: keep 2x2 grid and maximize each GIF inside its cell */
+.download-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--accent, #0b74ff);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.desktop-layout {
+  display: none;
+}
+
+/* Desktop: 2 GIFs (left) + cursor area (center) + 2 GIFs (right) */
 @media (min-width: 768px) {
-  .gif-gallery {
+  .mobile-layout {
+    display: none;
+  }
+
+  .desktop-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px) minmax(0, 1fr);
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .gif-column {
+    display: grid;
     grid-template-rows: 50vh 50vh;
     gap: 0;
   }
 
-  .gif-gallery .cell {
+  .cell {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     overflow: hidden;
   }
 
-  .gif-gallery .media-wrap {
+  .media-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,34 +49,103 @@
     height: 100%;
   }
 
-  .gif-gallery .gif {
+  .gif {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
   }
 
-  /* summary download button (normal placement) */
+  .cursor-lab {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    border-inline: 1px solid var(--border, #e5e4e7);
+  }
+
+  .cursor-lab-title {
+    margin: 0 0 4px;
+    font-size: 18px;
+  }
+
+  .cursor-item {
+    border: 1px solid var(--border, #e5e4e7);
+    border-radius: 10px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--bg, #fff);
+  }
+
+  .cursor-item-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-h, #08060d);
+  }
+
+  .cursor-sample {
+    width: 24px;
+    height: 24px;
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
+
+  .cursor-test-area {
+    height: 56px;
+    border: 1px dashed var(--border, #e5e4e7);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text, #6b6375);
+    user-select: none;
+  }
+
+  .cursor-grabable {
+    /* cursor: url('/cursor_by_nukanoto/pointer.png') 8 8, grab; */
+    cursor: grab;
+  }
+
+  .cursor-row-resize {
+    /* cursor: url('/cursor_by_nukanoto/row-resize.png') 8 8, row-resize; */
+    cursor: row-resize;
+  }
+
+  .cursor-col-resize {
+    /* cursor: url('/cursor_by_nukanoto/col-resize.png') 8 8, col-resize; */
+    cursor: col-resize;
+  }
+
+  .cursor-forbidden {
+    /* cursor: url('/cursor_by_nukanoto/not-allowed.png') 8 8, not-allowed; */
+    cursor: not-allowed;
+  }
+
   .summary-download {
     display: flex;
     justify-content: center;
     padding: 18px 0;
   }
 
-  /* hide per-gif mobile buttons on desktop */
-  .mobile-action { display: none; }
+  .mobile-action {
+    display: none;
+  }
 }
 
-/* Mobile: vertical stacked list */
+/* Mobile: keep existing design */
 @media (max-width: 767px) {
-  .gif-gallery {
+  .mobile-layout {
     display: flex;
     flex-direction: column;
     gap: 18px;
     padding: 16px;
   }
 
-  .gif-gallery .cell {
+  .cell {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,25 +154,18 @@
     background: transparent;
   }
 
-  .gif-gallery .gif {
+  .gif {
     width: 100%;
     max-width: 680px;
     height: auto;
     display: block;
   }
 
-  /* show per-gif buttons on mobile */
-  .mobile-action { display: block; }
-
-  .download-btn {
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: var(--accent, #0b74ff);
-    color: white;
-    border: none;
-    cursor: pointer;
+  .mobile-action {
+    display: block;
   }
 
-  /* hide summary button on mobile */
-  .summary-download { display: none; }
+  .summary-download {
+    display: none;
+  }
 }
