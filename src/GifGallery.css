@@ -106,18 +106,18 @@
   }
 
   .cursor-grabable {
-    /* cursor: url('/cursor_by_nukanoto/pointer.png') 8 8, grab; */
-    cursor: grab;
+    /* cursor: url('/cursor_by_nukanoto/pointer.png') 8 8, pointer; */
+    cursor: pointer;
   }
 
   .cursor-row-resize {
-    /* cursor: url('/cursor_by_nukanoto/row-resize.png') 8 8, row-resize; */
-    cursor: row-resize;
+    /* cursor: url('/cursor_by_nukanoto/row-resize.png') 8 8, ns-resize; */
+    cursor: ns-resize;
   }
 
   .cursor-col-resize {
-    /* cursor: url('/cursor_by_nukanoto/col-resize.png') 8 8, col-resize; */
-    cursor: col-resize;
+    /* cursor: url('/cursor_by_nukanoto/col-resize.png') 8 8, ew-resize; */
+    cursor: ew-resize;
   }
 
   .cursor-forbidden {
