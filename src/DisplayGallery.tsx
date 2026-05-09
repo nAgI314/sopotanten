@@ -19,7 +19,7 @@ export default function DisplayGallery() {
         </div>
 
         <div className="cursor-lab">
-          <h2 className="cursor-lab-title">カーソルお試しエリア</h2>
+          <h2 className="cursor-lab-title">そぽカーソルお試しエリア</h2>
 
           <div className="cursor-item">
             <div className="cursor-item-head">
