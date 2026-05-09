@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-/* Desktop: 2x2 grid filling viewport height (each cell centers its content) */
+/* Desktop: keep 2x2 grid and maximize each GIF inside its cell */
 @media (min-width: 768px) {
   .gif-gallery {
     display: grid;
@@ -28,8 +28,8 @@
   }
 
   .gif-gallery .gif {
-    max-width: 98%;
-    max-height: 98%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
   }
@@ -73,7 +73,7 @@
 
   .gif-gallery .gif {
     width: 100%;
-    max-width: 520px;
+    max-width: 680px;
     height: auto;
     display: block;
   }
