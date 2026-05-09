@@ -8,12 +8,26 @@ services:
       - traefik-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.sopotanten.rule=Host(`sopotan.minagiri.net`)"
-      - "traefik.http.routers.sopotanten.entrypoints=websecure"
-      - "traefik.http.routers.sopotanten.tls.certresolver=letsencrypt"
-      - "traefik.http.services.sopotanten.loadbalancer.server.port=80"
-      - "traefik.docker.network=traefik-network"
 
+      - "traefik.http.routers.sopotanten.rule=Host(`sopotan.minagiri.net`)"
+
+      # HTTP
+      - "traefik.http.routers.sopotanten-http.entrypoints=web"
+      - "traefik.http.routers.sopotanten-http.rule=Host(`sopotan.minagiri.net`)"
+      - "traefik.http.routers.sopotanten-http.middlewares=redirect-https"
+
+      # HTTPS
+      - "traefik.http.routers.sopotanten.entrypoints=websecure"
+      - "traefik.http.routers.sopotanten.tls=true"
+      - "traefik.http.routers.sopotanten.tls.certresolver=letsencrypt"
+
+      # redirect
+      - "traefik.http.middlewares.redirect-https.redirectscheme.scheme=https"
+
+      # service
+      - "traefik.http.services.sopotanten.loadbalancer.server.port=80"
+
+      - "traefik.docker.network=traefik-network"
 networks:
   traefik-network:
     name: traefik-network
