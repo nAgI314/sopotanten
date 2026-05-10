@@ -23,7 +23,8 @@ export default function GifGallery() {
 
   function tweetWithGif(name: string) {
     const ogpSlug = name.replace(/\.gif$/i, '')
-    const ogpUrl = `${window.location.origin}/ogp/${ogpSlug}.html`
+    const cacheBust = Date.now().toString(36)
+    const ogpUrl = `${window.location.origin}/ogp/${ogpSlug}.html?v=${cacheBust}`
     const text = `そぽが好きなのは${name} そぽ〜\n`
     const intentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(ogpUrl)}`
     window.open(intentUrl, '_blank', 'noopener,noreferrer')
