@@ -19,7 +19,7 @@ export default function DisplayGallery() {
         </div>
 
         <div className="cursor-lab">
-          <h2 className="cursor-lab-title">そぽカーソルお試しエリア</h2>
+          <h2 className="cursor-lab-title">そぽカーソルおためしエリア</h2>
 
           <div className="cursor-item">
             <div className="cursor-item-head">
@@ -30,7 +30,7 @@ export default function DisplayGallery() {
               />
               <span>grabable</span>
             </div>
-            <div className="cursor-test-area cursor-grabable">ここで試せます</div>
+            <div className="cursor-test-area cursor-grabable">ここでためせます</div>
           </div>
 
           <div className="cursor-item">
@@ -40,9 +40,9 @@ export default function DisplayGallery() {
                 alt="row resize cursor sample"
                 className="cursor-sample"
               />
-              <span>縦 resize</span>
+              <span>たて resize</span>
             </div>
-            <div className="cursor-test-area cursor-row-resize">ここで試せます</div>
+            <div className="cursor-test-area cursor-row-resize">ここでためせます</div>
           </div>
 
           <div className="cursor-item">
@@ -52,9 +52,9 @@ export default function DisplayGallery() {
                 alt="column resize cursor sample"
                 className="cursor-sample"
               />
-              <span>横 resize</span>
+              <span>よこ resize</span>
             </div>
-            <div className="cursor-test-area cursor-col-resize">ここで試せます</div>
+            <div className="cursor-test-area cursor-col-resize">ここでためせます</div>
           </div>
 
           <div className="cursor-item">
@@ -66,7 +66,7 @@ export default function DisplayGallery() {
               />
               <span>forbidden</span>
             </div>
-            <div className="cursor-test-area cursor-forbidden">ここで試せます</div>
+            <div className="cursor-test-area cursor-forbidden">ここでためせます</div>
           </div>
         </div>
 

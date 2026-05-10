@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'DOTfont';
+  src: url('/fonts/KFhimajiDOT.otf') format('opentype');
+}
+
+body {
+  font-family: 'DOTfont', sans-serif;
+}
+h1,
+h2 {
+  font-family: 'DOTfont', sans-serif;
+}
+button {
+  font-family: 'DOTfont', sans-serif;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;

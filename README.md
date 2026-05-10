@@ -3,7 +3,7 @@
 ## Dockerデプロイ
 
 - `/` : GIF表示 + ダウンロード
-- `/display` : 展示表示（カーソルお試しエリア付き、ダウンロードなし）
+- `/display` : 展示表示（カーソルおためしエリア付き、ダウンロードなし）
 
 前提: 既存の Traefik が `traefik-network`（または `.env` の `TRAEFIK_DOCKER_NETWORK`）に参加していること。
 

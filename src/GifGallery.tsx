@@ -19,6 +19,10 @@ export default function GifGallery() {
   }
 
   return (
+    <div className="gif-gallery-wrap">
+      <div className="gallery-description">
+        <h1>そぽたん.gif</h1>
+      </div>
     <div className="gif-gallery">
       {gifs.map((name, idx) => (
         <div key={name} className="cell" data-index={idx}>
@@ -36,6 +40,7 @@ export default function GifGallery() {
           まとめてダウンロード
         </button>
       </div>
+    </div>
     </div>
   )
 }
