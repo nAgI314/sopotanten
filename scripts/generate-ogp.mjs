@@ -62,6 +62,7 @@ for (const gifName of gifNames) {
     <meta name="twitter:description" content="${description}" />
     <meta name="twitter:image" content="${imageUrl}" />
     <meta name="twitter:image:alt" content="${gifName}" />
+    <meta http-equiv="refresh" content="0; url=${origin}/" />
   </head>
   <body>
     <a href="${origin}/">そぽたん.gif</a>
