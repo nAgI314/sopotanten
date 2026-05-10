@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        APP_ORIGIN: ${APP_ORIGIN:-https://sopotan.minagiri.net}
     restart: unless-stopped
     networks:
       - traefik-network

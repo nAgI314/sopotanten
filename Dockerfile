@@ -1,5 +1,7 @@
 FROM node:22-alpine AS build
 WORKDIR /app
+ARG APP_ORIGIN=https://localhost
+ENV APP_ORIGIN=$APP_ORIGIN
 
 COPY package.json bun.lock ./
 RUN npm install
