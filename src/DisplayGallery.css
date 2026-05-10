@@ -1,5 +1,6 @@
 .display-gallery {
   width: 100%;
+  cursor: url('/cursor_by_nukanoto/arrow.png'), auto;
 }
 
 .display-gallery .desktop-layout {
@@ -96,23 +97,23 @@
   }
 
   .display-gallery .cursor-grabable {
-    /* cursor: url('/cursor_by_nukanoto/pointer.png') 8 8, pointer; */
-    cursor: pointer;
+    cursor: url('/cursor_by_nukanoto/pointer.png') 8 8, pointer;
+    /* cursor: pointer; */
   }
 
   .display-gallery .cursor-row-resize {
-    /* cursor: url('/cursor_by_nukanoto/row-resize.png') 8 8, ns-resize; */
-    cursor: ns-resize;
+    cursor: url('/cursor_by_nukanoto/row-resize.png') 8 8, ns-resize;
+    /* cursor: ns-resize; */
   }
 
   .display-gallery .cursor-col-resize {
-    /* cursor: url('/cursor_by_nukanoto/col-resize.png') 8 8, ew-resize; */
-    cursor: ew-resize;
+    cursor: url('/cursor_by_nukanoto/col-resize.png') 8 8, ew-resize;
+    /* cursor: ew-resize; */
   }
 
   .display-gallery .cursor-forbidden {
-    /* cursor: url('/cursor_by_nukanoto/not-allowed.png') 8 8, not-allowed; */
-    cursor: not-allowed;
+    cursor: url('/cursor_by_nukanoto/not-allowed.png') 8 8, not-allowed;
+    /* cursor: not-allowed; */
   }
 }
 
