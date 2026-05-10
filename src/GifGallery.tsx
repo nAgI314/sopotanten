@@ -70,8 +70,8 @@ export default function GifGallery() {
           onClick={() => setIsTweetDialogOpen(false)}
         >
           <div className="tweet-dialog" onClick={(event) => event.stopPropagation()}>
-            <h2 id="tweet-dialog-title">どのgifが好き？</h2>
-            <p className="tweet-dialog-subtitle">タップして選ぶと投稿画面が開きます。</p>
+            <h2 id="tweet-dialog-title">どのgifがすき？</h2>
+            <p className="tweet-dialog-subtitle">タップしてえらぶとXがひらきます。</p>
             <div className="tweet-gif-list">
               {gifs.map((name) => (
                 <button
@@ -90,7 +90,7 @@ export default function GifGallery() {
               className="tweet-dialog-close"
               onClick={() => setIsTweetDialogOpen(false)}
             >
-              閉じる
+              とじる
             </button>
           </div>
         </div>
