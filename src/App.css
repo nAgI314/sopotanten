@@ -5,6 +5,7 @@
 
 body {
   font-family: 'DOTfont', sans-serif;
+  cursor: url('/cursor_by_nukanoto/arrow.png'), auto;
 }
 h1,
 h2 {
