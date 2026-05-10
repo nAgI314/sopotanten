@@ -39,7 +39,8 @@ for (const gifName of gifNames) {
   const slug = gifName.replace(/\.gif$/i, '')
   const imagePath = resolveImagePath(slug, gifName)
   const ogpUrl = `${origin}/ogp/${slug}.html`
-  const imageUrl = `${origin}${imagePath}`
+  const imageVersion = Date.now().toString(36)
+  const imageUrl = `${origin}${imagePath}?v=${imageVersion}`
   const title = `そぽが好きなのは${gifName} そぽ〜`
   const description = `そぽたん.gif の ${gifName}`
 
